@@ -61,3 +61,9 @@ def save_to_csv(data, namefile, data_type, conn, cursor):
     df = pd.DataFrame(data, columns=columns)
     df.to_csv(f'{namefile}.csv', index=False)
     return
+
+conn, cursor = init()
+source = extract_all_data(conn, cursor, 'REVIEWS')
+save_to_csv(source, 'data', 'original', conn, cursor)
+cleaned = extract_all_data(conn, cursor, 'REVIEWS_CLEANED')
+save_to_csv(cleaned, 'data_cleaned', 'cleaned', conn, cursor)
