@@ -27,7 +27,7 @@ opt.add_experimental_option("prefs", { \
 
 url = 'https://www.amazon.com/s?i=specialty-aps&bbn=16225006011&rh=n%3A%2116225006011%2Cn%3A11060451&ref=nav_em__nav_desktop_sa_intl_skin_care_0_2_11_3'
 
-driver = webdriver.Chrome('chromedriver.exe', options = opt)
+driver = driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options = opt)
 driver.get(url)
 
 json_star = {1 : 'one', 2 : 'two', 3 : 'three', 4 : 'four', 5 : 'five'}
